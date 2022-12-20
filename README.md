@@ -1,3 +1,5 @@
+<a name="readme-top"></a>
+
 <div align="center">
   <img src="https://res.cloudinary.com/dxsom7jmx/image/upload/v1670245965/Meta%20tags/murple_logo_rxik8f.png" alt="logo" width="100"  height="auto" />
   <br/>
@@ -15,14 +17,14 @@
 - [⭐️ Show your support](#support)
 - [📝 License](#license)
 
-# 📖 OOP School Library
+# 📖 OOP School Library <a name="about-project"></a>
 
 > This web app is a tool used to keep records in library for what books are in the library and who borrows them. This app allows you to:
 - Add new students or teachers.
 - Add new books.
 - Save records of who borrowed a given book and when.
 
-## 🛠 Built With
+## 🛠 Built With <a name="built-with"></a>
 
 <details>
   <summary>Server</summary>
@@ -31,7 +33,7 @@
   </ul>
 </details>
 
-## 💻 Getting Started
+## 💻 Getting Started <a name="getting-started"></a>
 
 To get the content of this project locally you need to run the following commands in your terminal.
 
@@ -68,7 +70,7 @@ rubocop
 ```
 
 
-## Authors
+## Authors <a name="authors"></a>
 
 👤 **Justice Bajeri**
 
@@ -77,13 +79,15 @@ rubocop
 - LinkedIn: [Link to LinkedIn Profile](https://www.linkedin.com/in/justice-bajeri-0b7211243/)
 
 
-## 🤝 Contributing
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).
 
-## ⭐️ Show your support
+## ⭐️ Show your support <a name="support"></a>
 
 Give a ⭐️ if you like this project!
 
@@ -93,6 +97,6 @@ Give a ⭐️ if you like this project!
 - Inspiration
 - etc
 
-## 📝 License
+## 📝 License <a name="license"></a>
 
 This project is [MIT](./MIT.md) licensed.
