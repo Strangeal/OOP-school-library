@@ -1,18 +1,32 @@
+<a name="readme-top"></a>
+
 <div align="center">
   <img src="https://res.cloudinary.com/dxsom7jmx/image/upload/v1670245965/Meta%20tags/murple_logo_rxik8f.png" alt="logo" width="100"  height="auto" />
   <br/>
   <h3><b>OOP School Library</b></h3>
 </div>
 
-# OOP School Library
+# 📗 Table of Contents
+
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+- [💻 Getting Started](#getting-started)
+- [👥 Authors](#authors)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [📝 License](#license)
+
+# 📖 OOP School Library <a name="about-project"></a>
 
 > This web app is a tool used to keep records in library for what books are in the library and who borrows them. This app allows you to:
 - Add new students or teachers.
 - Add new books.
 - Save records of who borrowed a given book and when.
 
-## Built With
+## 🛠 Built With <a name="built-with"></a>
 
+### Tech Stack <a name="tech-stack"></a>
 <details>
   <summary>Server</summary>
   <ul>
@@ -20,15 +34,7 @@
   </ul>
 </details>
 
-## Live Demo
-
-[**See Project 🚀**](Coming Soon)
-
-## Screenshots 
-
-![Desktop Design](Coming Soon)
-
-## Getting Started
+## 💻 Getting Started <a name="getting-started"></a>
 
 To get the content of this project locally you need to run the following commands in your terminal.
 
@@ -65,7 +71,7 @@ rubocop
 ```
 
 
-## Authors
+## Authors <a name="authors"></a>
 
 👤 **Justice Bajeri**
 
@@ -74,13 +80,15 @@ rubocop
 - LinkedIn: [Link to LinkedIn Profile](https://www.linkedin.com/in/justice-bajeri-0b7211243/)
 
 
-## 🤝 Contributing
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).
 
-## Show your support
+## ⭐️ Show your support <a name="support"></a>
 
 Give a ⭐️ if you like this project!
 
@@ -90,6 +98,6 @@ Give a ⭐️ if you like this project!
 - Inspiration
 - etc
 
-## 📝 License
+## 📝 License <a name="license"></a>
 
 This project is [MIT](./MIT.md) licensed.
