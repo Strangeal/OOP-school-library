@@ -3,11 +3,11 @@ class Teacher < Person
   attr_accessor :specialization
 
   def initialize(specialization)
-    super
+    super()
     @specialization = specialization
   end
 
   def can_use_services?
-    true
+    false
   end
 end
