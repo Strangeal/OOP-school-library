@@ -4,14 +4,25 @@
   <h3><b>OOP School Library</b></h3>
 </div>
 
-# OOP School Library
+# 📗 Table of Contents
+
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+- [💻 Getting Started](#getting-started)
+- [👥 Authors](#authors)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [📝 License](#license)
+
+# 📖 OOP School Library
 
 > This web app is a tool used to keep records in library for what books are in the library and who borrows them. This app allows you to:
 - Add new students or teachers.
 - Add new books.
 - Save records of who borrowed a given book and when.
 
-## Built With
+## 🛠 Built With
 
 <details>
   <summary>Server</summary>
@@ -20,15 +31,7 @@
   </ul>
 </details>
 
-## Live Demo
-
-[**See Project 🚀**](Coming Soon)
-
-## Screenshots 
-
-![Desktop Design](Coming Soon)
-
-## Getting Started
+## 💻 Getting Started
 
 To get the content of this project locally you need to run the following commands in your terminal.
 
@@ -80,7 +83,7 @@ Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).
 
-## Show your support
+## ⭐️ Show your support
 
 Give a ⭐️ if you like this project!
 
