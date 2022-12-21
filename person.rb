@@ -31,8 +31,6 @@ class Person < Nameable
 
   def add_rental(book, date)
     Rental.new(date, book, self)
-    # @rentals = rentals
-    # rentals.persons.push(self) unless rentals.persons.include?(self)
   end
 
   private

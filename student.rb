@@ -2,11 +2,9 @@ require_relative 'person'
 require_relative 'teacher'
 require_relative 'classroom'
 require_relative 'book'
-# require_relative 'rental'
 
 class Student < Person
   attr_accessor :classroom
-  attr_reader :classrooms
 
   def initialize(classroom)
     super('Ahmed', 24)
