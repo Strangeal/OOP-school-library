@@ -1,10 +1,7 @@
 <a name="readme-top"></a>
 
-<div align="center">
-  <img src="https://res.cloudinary.com/dxsom7jmx/image/upload/v1670245965/Meta%20tags/murple_logo_rxik8f.png" alt="logo" width="100"  height="auto" />
-  <br/>
-  <h3><b>OOP School Library</b></h3>
-</div>
+<h3><b>OOP School Library</b></h3>
+
 
 # 📗 Table of Contents
 
@@ -99,10 +96,7 @@ rubocop
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
-
 - [ ] **[User interface]**
-
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -125,4 +119,6 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./MIT.md) licensed.
+This project is [MIT](./LICENSE) licensed.
+
+_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
