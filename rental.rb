@@ -9,5 +9,4 @@ class Rental
     @persons = persons
     book.rentals << self
   end
-
 end
