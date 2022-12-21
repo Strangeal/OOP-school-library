@@ -12,6 +12,12 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
 - [💻 Getting Started](#getting-started)
+    - [Setup](#setup)
+    - [Prerequisites](#prerequisites)
+    - [Install](#install)
+    - [Usage](#usage)
+    - [Run tests](#run-tests)
+    - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
@@ -33,6 +39,16 @@
     <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
   </ul>
 </details>
+
+<!-- Features -->
+
+### Key Features <a name="key-features"></a>
+
+> Describe between 1-3 key features of the application.
+
+- **[key_feature_1]**
+- **[key_feature_2]**
+- **[key_feature_3]**
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
@@ -78,6 +94,16 @@ rubocop
 - GitHub: [Link to Github Profile](https://github.com/Strangeal)
 - Twitter: [Link to Twitter Profile](https://twitter.com/Str_angeal)
 - LinkedIn: [Link to LinkedIn Profile](https://www.linkedin.com/in/justice-bajeri-0b7211243/)
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+> Describe 1 - 3 features you will add to the project.
+
+- [ ] **[new_feature_1]**
+- [ ] **[new_feature_2]**
+- [ ] **[new_feature_3]**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
