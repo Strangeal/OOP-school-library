@@ -15,8 +15,8 @@ class Student < Person
     ' ¯(ツ)/¯ '
   end
 
-  def belongs_to=(classrooms)
-    @classrooms = classrooms
-    classrooms.students.push(self) unless classrooms.students.include?(self)
+  def classrooms=(classroom)
+    @classroom = classroom
+    classroom.students.push(self) unless classroom.students.include?(self)
   end
 end
