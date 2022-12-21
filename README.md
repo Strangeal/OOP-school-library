@@ -46,9 +46,9 @@
 
 > Describe between 1-3 key features of the application.
 
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
+- **[Add new students]**
+- **[Add new books]**
+- **[Save records of borrowed books]**
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
@@ -101,9 +101,8 @@ rubocop
 
 > Describe 1 - 3 features you will add to the project.
 
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- [ ] **[User interface]**
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

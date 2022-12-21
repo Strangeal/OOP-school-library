@@ -1,13 +1,12 @@
 require_relative 'book'
 
 class Rental
-  attr_accessor :date
-  attr_reader :books, :persons
+  attr_accessor :date, :books, :persons
 
-  def initialize(date, _books, _persons)
+  def initialize(date, books, persons)
     @date = date
-    @books = []
-    @persons = []
+    @books = books
+    @persons = persons
   end
 
   def many?(book, person)
