@@ -26,10 +26,6 @@ class Person < Nameable
     @name
   end
 
-  # def many?(rental)
-  #   rentals.push(rental)
-  # end
-
   def add_book_rental(book, date)
     Rental.new(date, book, self)
   end
@@ -40,5 +36,3 @@ class Person < Nameable
     @age >= 18
   end
 end
-
-# person = Person.new()

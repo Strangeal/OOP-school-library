@@ -4,6 +4,7 @@ class Book
   attr_accessor :title, :author, :rentals
 
   def initialize(title, author)
+    id = Random.rand(1..100)
     @title = title
     @author = author
     @rentals = []
@@ -11,12 +12,6 @@ class Book
 
   def rent_book(person, date)
     Rental.new(date, person, self)
-    # @rentals.push(rental)
-    # rental.books = self
   end
-
-  # def belongs_to=(rentals)
-  #   @rentals = rentals
-  #   rentals.books.push(self) unless rentals.books.include?(self)
-  # end
 end
+
