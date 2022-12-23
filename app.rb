@@ -155,11 +155,7 @@ class App
     print 'Person id: '
     id = gets.chomp.to_i
     @rentals.each do |list|
-      if list.person.id == id
         puts "Date: #{list.date}, Books: #{list.book.title} written by Author: #{list.book.author}"
-      else
-        puts 'Person ID not found'
-      end
     end
   end
 
@@ -183,4 +179,4 @@ class App
     end
   end
 end
-# rubocop:enable Metrics/ClassLength
+# rubocop:enable ClassLength
