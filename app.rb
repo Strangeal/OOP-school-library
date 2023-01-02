@@ -1,8 +1,8 @@
-# rubocop:disable Metrics/ClassLength
 require_relative 'student'
 require_relative 'book'
 require_relative 'rental'
 require_relative 'teacher'
+require_relative 'prompt'
 
 class App
   attr_accessor :book, :people, :rentals
@@ -13,46 +13,22 @@ class App
     @rentals = []
   end
 
-  # render on page load
-  def run
-    puts library_menu
-    user_input = gets.chomp
-
-    if user_input <= '6'
-      options(user_input)
-    elsif user_input == '7'
-      puts 'Thanks for using the app!'
-    else
-      'Please select an option from 1 - 7'
-    end
+  def exit_app
+    puts 'Thanks for using the app! 🤗🥰'
+    exit
   end
 
   # Default return
   def back_to_menu
     puts ''
-    print 'Press Enter to go back to menu: '
+    print 'Press Any key to go back to menu: '
     gets.chomp
-    run
-  end
-
-  # Library menu
-  def library_menu
-    puts 'Welcome👋 to School library App!'
-    puts ''
-    puts 'Please choose an option by entering a number'
-    puts '1 - List all books'
-    puts '2 - List all people'
-    puts '3 - Create a person'
-    puts '4 - Create a book'
-    puts '5 - Create a rental'
-    puts '6 - List all rentals for a given person id'
-    puts '7 - Exit'
   end
 
   # list books
   def list_books
     if @book.empty?
-      puts 'No book available 😔'
+      puts "\n No book available 😔"
       back_to_menu
     end
     puts 'List of all books: '
@@ -65,10 +41,10 @@ class App
   # list people
   def list_people
     if @people.empty?
-      puts 'No people available 😔'
+      puts "\n No people available 😔"
       back_to_menu
     end
-    puts 'List all people: '
+    puts 'List of all people: '
     @people.each_with_index do |list, i|
       puts "#{i}) [#{list.class}] - Name: #{list.name}, ID: #{list.id} Age: #{list.age}"
     end
@@ -81,12 +57,10 @@ class App
     option = gets.chomp.to_i
 
     case option
-    when 1
-      create_student
-    when 2
-      create_teacher
+    when 1 then create_student
+    when 2 then create_teacher
     else
-      puts 'Please enter a number 1 or 2'
+      puts 'Please enter a number (1 or 2)'
     end
   end
 
@@ -95,11 +69,11 @@ class App
     age = gets.chomp.to_i
     print 'Name: '
     name = gets.chomp
-    print 'Has parents permission? [Y/N]: '
-    permission = gets.chomp
-    new_student = Student.new(age, permission, name)
+    has_permission = permission?
+    # permission = gets.chomp
+    new_student = Student.new(age, has_permission, name)
     @people.push(new_student)
-    puts 'Person created successfully'
+    puts 'Person created successfully 🧑🏼‍🎓👍'
     back_to_menu
   end
 
@@ -112,8 +86,21 @@ class App
     specialization = gets.chomp
     new_teacher = Teacher.new(age, specialization, name)
     @people.push(new_teacher)
-    puts 'Teacher created successfully'
+    puts 'Teacher created successfully 👩🏼‍🏫👍'
     back_to_menu
+  end
+
+  def permission?
+    print 'Has parents permission? [Y/N]: '
+    permission = gets.chomp.upcase
+
+    case permission
+    when 'N' then false
+    when 'Y' then true
+    else
+      puts 'Incorrect input'
+      permission?
+    end
   end
 
   # Create a book
@@ -124,31 +111,35 @@ class App
     author = gets.chomp
     new_book = Book.new(title, author)
     @book.push(new_book)
-    puts 'Book created'
+    puts "\n Book created 📚"
     back_to_menu
   end
 
   # create rentals
   def create_rental
-    puts 'Select a book from the following by number '
+    puts 'Select a book 📚 from the following by number '
     @book.each_with_index { |list, i| puts "#{i}) Title: #{list.title}, Author: #{list.author}" }
+    Prompt.new.prompt(self) if @people.empty?
     index = gets.chomp.to_i
     book = @book[index]
-    puts 'Select a person from the following list by number (not id)'
+
+    puts 'Select a person 👭 from the following list by number (not id)'
     @people.each_with_index { |list, i| puts "#{i}) Name: #{list.name}, ID: #{list.id} Age: #{list.age}" }
+    Prompt.new.prompt(self) if @people.empty?
     index = gets.chomp.to_i
     person = @people[index]
-    print 'Date(yyyy/mm/dd): '
+
+    print '📆 Date(yyyy/mm/dd): '
     date = gets.chomp
     rental = Rental.new(date, book, person)
     @rentals.push(rental)
-    puts 'Rental created successfully'
+    puts "\n Rental created successfully 📚⚖️"
     back_to_menu
   end
 
   # get all rentals
   def list_rentals
-    puts 'Select ID of any person (Please type the number of the ID: '
+    puts 'Select ID 🔑 of any person (Please type the number of the ID: '
     @people.each { |list| puts "Id: #{list.id}, Person: #{list.name} " }
     puts ''
     # get detals of rentals by id
@@ -156,31 +147,11 @@ class App
     id = gets.chomp.to_i
     @rentals.each do |list|
       if list.person.id == id
-        puts "Date: #{list.date}, Books: #{list.book.title} written by Author: #{list.book.author}"
+        puts "\n Date: #{list.date}, Books: #{list.book.title} written by Author: #{list.book.author}"
       else
-        puts 'Person ID not found'
+        puts "❌ Person ID not found ❌"
+        puts "\n"
       end
     end
   end
-
-  # render based on user input
-  def options(user_input)
-    case user_input
-    when '1'
-      list_books
-    when '2'
-      list_people
-    when '3'
-      create_person
-    when '4'
-      create_book
-    when '5'
-      create_rental
-    when '6'
-      list_rentals
-    else
-      puts 'Enter a number between 1 - 7'
-    end
-  end
 end
-# rubocop:enable Metrics/ClassLength
