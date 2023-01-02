@@ -149,7 +149,7 @@ class App
       if list.person.id == id
         puts "\n Date: #{list.date}, Books: #{list.book.title} written by Author: #{list.book.author}"
       else
-        puts "❌ Person ID not found ❌"
+        puts '❌ Person ID not found ❌'
         puts "\n"
       end
     end
