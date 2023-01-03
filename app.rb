@@ -141,18 +141,18 @@ class App
   # get all rentals
   def list_rentals
     if @rentals.empty?
-      puts "No rental mode"
+      puts 'No rental mode'
     else
       # get detals of rentals by id
-    print 'Person id: '
-    id = gets.chomp.to_i
-    @rentals.each do |list|
-      if list.person.id == id
-        puts "Date: #{list.date}, Books: #{list.book.title} written by Author: #{list.book.author}"
-      else
-        puts "\n ❌ Person ID not found ❌"
+      print 'Person id: '
+      id = gets.chomp.to_i
+      @rentals.each do |list|
+        if list.person.id == id
+          puts "Date: #{list.date}, Books: #{list.book.title} written by Author: #{list.book.author}"
+        else
+          puts "\n ❌ Person ID not found ❌"
+        end
       end
-    end
     end
   end
 end
