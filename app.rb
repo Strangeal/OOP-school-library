@@ -46,7 +46,7 @@ class App
     end
     puts 'List of all people: '
     @people.each_with_index do |list, i|
-      puts "#{i}) [#{list.class}] - Name: #{list.name}, ID: #{list.id} Age: #{list.age}"
+      puts "#{i}) [#{list.type}] - Name: #{list.name}, ID: #{list.id} Age: #{list.age}"
     end
     back_to_menu
   end
@@ -69,9 +69,10 @@ class App
     age = gets.chomp.to_i
     print 'Name: '
     name = gets.chomp
-    has_permission = permission?
-    # permission = gets.chomp
-    new_student = Student.new(age, has_permission, name)
+    print 'Classroom (A-4, B-3): '
+    classroom = gets.chomp.upcase
+    parent_permission = permission?
+    new_student = Student.new(age, classroom, name, parent_permission: parent_permission)
     @people.push(new_student)
     puts 'Person created successfully 🧑🏼‍🎓👍'
     back_to_menu
@@ -139,18 +140,18 @@ class App
 
   # get all rentals
   def list_rentals
-    puts 'Select ID 🔑 of any person (Please type the number of the ID: '
-    @people.each { |list| puts "Id: #{list.id}, Person: #{list.name} " }
-    puts ''
-    # get detals of rentals by id
-    print 'Person id: '
-    id = gets.chomp.to_i
-    @rentals.each do |list|
-      if list.person.id == id
-        puts "\n Date: #{list.date}, Books: #{list.book.title} written by Author: #{list.book.author}"
-      else
-        puts '❌ Person ID not found ❌'
-        puts "\n"
+    if @rentals.empty?
+      puts 'No rental mode'
+    else
+      # get detals of rentals by id
+      print 'Person id: '
+      id = gets.chomp.to_i
+      @rentals.each do |list|
+        if list.person.id == id
+          puts "Date: #{list.date}, Books: #{list.book.title} written by Author: #{list.book.author}"
+        else
+          puts "\n ❌ Person ID not found ❌"
+        end
       end
     end
   end
