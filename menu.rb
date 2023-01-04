@@ -14,7 +14,7 @@ class LibraryMenu
   end
 
   def library_menu
-    puts 'Please choose an option by entering a number'
+    puts "\n Please choose an option by entering a number"
 
     puts @options
   end

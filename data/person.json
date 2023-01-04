@@ -1,0 +1,17 @@
+[
+  {
+    "id": 530,
+    "name": "Justice",
+    "age": 45,
+    "type": "Teacher",
+    "specialization": "Developer"
+  },
+  {
+    "id": 451,
+    "name": "Daron",
+    "age": 22,
+    "type": "Student",
+    "classroom": "A-23",
+    "parent_permission": true
+  }
+]

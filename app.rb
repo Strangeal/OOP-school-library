@@ -3,25 +3,29 @@ require_relative 'book'
 require_relative 'rental'
 require_relative 'teacher'
 require_relative 'prompt'
+require_relative 'read'
+require_relative 'save'
 
 class App
   attr_accessor :book, :people, :rentals
 
   def initialize
-    @book = []
-    @people = []
-    @rentals = []
+    @book = Read.new.read_books
+    @people = Read.new.read_person
+    @rentals = Read.new.read_rentals
   end
 
   def exit_app
+    Save.new.save_books(@book)
+    Save.new.save_people(@people)
+    Save.new.save_rentals(@rentals)
     puts 'Thanks for using the app! 🤗🥰'
     exit
   end
 
   # Default return
   def back_to_menu
-    puts ''
-    print 'Press Any key to go back to menu: '
+    print "\n Press Any key to go back to menu: "
     gets.chomp
   end
 
@@ -72,7 +76,7 @@ class App
     print 'Classroom (A-4, B-3): '
     classroom = gets.chomp.upcase
     parent_permission = permission?
-    new_student = Student.new(age, classroom, name, parent_permission: parent_permission)
+    new_student = Student.new(classroom, age, name, parent_permission: parent_permission)
     @people.push(new_student)
     puts 'Person created successfully 🧑🏼‍🎓👍'
     back_to_menu
@@ -120,7 +124,7 @@ class App
   def create_rental
     puts 'Select a book 📚 from the following by number '
     @book.each_with_index { |list, i| puts "#{i}) Title: #{list.title}, Author: #{list.author}" }
-    Prompt.new.prompt(self) if @people.empty?
+    Prompt.new.prompt(self) if @book.empty?
     index = gets.chomp.to_i
     book = @book[index]
 
@@ -141,16 +145,17 @@ class App
   # get all rentals
   def list_rentals
     if @rentals.empty?
-      puts 'No rental mode'
+      puts "\n No rental mode"
     else
       # get detals of rentals by id
       print 'Person id: '
-      id = gets.chomp.to_i
-      @rentals.each do |list|
-        if list.person.id == id
+      person_id = gets.chomp.to_i
+      person_rentals = @rentals.select { |rental| rental.person.id == person_id }
+      if person_rentals.empty?
+        puts "\n ❌ Person ID not found ❌"
+      else
+        person_rentals.each do |list|
           puts "Date: #{list.date}, Books: #{list.book.title} written by Author: #{list.book.author}"
-        else
-          puts "\n ❌ Person ID not found ❌"
         end
       end
     end
