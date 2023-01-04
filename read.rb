@@ -27,7 +27,7 @@ class Read
         people << teacher
       else
         student = Student.new(person['classroom'], person['age'], person['name'])
-        student.id = person["id"]
+        student.id = person['id']
         people << student
       end
     end
@@ -37,7 +37,7 @@ class Read
 
   def read_rentals
     rentals = []
-    return rentals unless File.exist?("./data/rentals.json")
+    return rentals unless File.exist?('./data/rentals.json')
 
     file = File.open('./data/rentals.json')
     rental_data = JSON.parse(file.read)

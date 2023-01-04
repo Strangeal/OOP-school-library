@@ -15,6 +15,7 @@ class Save
       book_arr << { title: book.title, author: book.author }
     end
     return if book_arr.empty?
+
     check_file('book')
     File.write('./data/books.json', JSON.pretty_generate(book_arr))
   end

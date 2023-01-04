@@ -150,13 +150,13 @@ class App
       # get detals of rentals by id
       print 'Person id: '
       person_id = gets.chomp.to_i
-      person_rentals = @rentals.select {|rental| rental.person.id == person_id }
+      person_rentals = @rentals.select { |rental| rental.person.id == person_id }
       if person_rentals.empty?
         puts "\n ❌ Person ID not found ❌"
       else
-      person_rentals.each do |list|
-        puts "Date: #{list.date}, Books: #{list.book.title} written by Author: #{list.book.author}"
-      end
+        person_rentals.each do |list|
+          puts "Date: #{list.date}, Books: #{list.book.title} written by Author: #{list.book.author}"
+        end
       end
     end
   end
