@@ -1,15 +1,16 @@
 describe Classroom do
-  it 'instance' do
-    new_classroom = Classroom.new("grade")
-
-    expect(new_classroom.label).to eql("grade")
+  before :each do
+    @new_classroom = Classroom.new('grade')
+  end
+  it 'Inserted data should match attribute' do
+    expect(@new_classroom.label).to eql('grade')
   end
 
-  it 'student' do
-    new_student = Student.new("C-67", 34, "John Doe")
-    new_classroom = Classroom.new("grade")
-    new_classroom.add_student(new_student)
+  it 'Student array should be populated' do
+    new_student = Student.new('C-67', 34, 'John Doe')
 
-    expect(new_classroom.students.length).to eql 1
+    @new_classroom.add_student(new_student)
+
+    expect(@new_classroom.students.length).to eql 1
   end
 end

@@ -1,21 +1,20 @@
-require_relative '../decorator.rb'
+require_relative '../decorator'
 
 describe Decorator do
-  it 'decorator' do
-    new_decorator = Decorator.new('Mike')
-    expect(new_decorator).to be_kind_of(Nameable)
+  before :each do
+    @new_person = Person.new(24, 'baby')
+    @new_decorator = Decorator.new(@new_person)
   end
 
-  it 'nameable' do
-    new_person = Person.new(24, "baby")
-    new_decorator = Decorator.new(new_person)
-    expect(new_decorator.nameable).to be_instance_of(Person)
+  it 'Decorator should should inherit from Nameable' do
+    expect(@new_decorator).to be_kind_of(Nameable)
   end
 
-  it 'correct name' do
-    new_person = Person.new(24, "baby")
-    new_decorator = Decorator.new(new_person)
+  it 'Nameable should be an instance of Person' do
+    expect(@new_decorator.nameable).to be_instance_of(Person)
+  end
 
-    expect(new_person.correct_name).to eql("baby")
+  it 'correct_name should return name attribute from Person' do
+    expect(@new_decorator.correct_name).to eql('baby')
   end
 end

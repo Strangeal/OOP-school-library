@@ -1,16 +1,16 @@
-require_relative '../cap_decorator.rb'
+require_relative '../cap_decorator'
 
 describe CapitalizeDecorator do
-  it 'instance' do
-    new_cap_decorator = CapitalizeDecorator.new('mike')
-    expect(new_cap_decorator).to be_kind_of(Decorator)
+  before :each do
+    @new_person = Person.new(24, 'baby')
+    @new_cap_decorator = CapitalizeDecorator.new(@new_person)
   end
 
-  it 'capitalize' do
-    new_person = Person.new(24, "baby")
-    new_cap_decorator = CapitalizeDecorator.new(new_person)
-    
+  it 'CapitalizeDecorator should inherit from Decorator' do
+    expect(@new_cap_decorator).to be_kind_of(Decorator)
+  end
 
-    expect(new_cap_decorator.correct_name).to eql("Baby")
+  it 'CapitalizeDecorator should capitalize the return value of person instance' do
+    expect(@new_cap_decorator.correct_name).to eql('Baby')
   end
 end
